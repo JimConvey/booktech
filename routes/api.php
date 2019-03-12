@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::post('/books/isbn/filter', "BookController@isbn_filter");
+Route::middleware('apiconsumer')->post('/books/isbn/filter', "BookController@isbn_filter");
